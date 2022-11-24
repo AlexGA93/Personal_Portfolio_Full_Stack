@@ -1,0 +1,25 @@
+@import "../../scss/index.scss";
+
+.navbar {
+  &_sections {
+    img {
+      width: 64px;
+    }
+    &_list {
+      a {
+        li {
+          font-size: 40px;
+        }
+      }
+    }
+  }
+  &_social {
+    &_list {
+      li {
+        img {
+          width: 30px;
+        }
+      }
+    }
+  }
+}
