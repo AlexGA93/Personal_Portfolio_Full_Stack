@@ -1,5 +1,7 @@
 // components
-import { Navbar, Skills } from './components/index';
+import { Navbar } from './components/index';
+//pages
+import { Skills, About } from './pages/index';
 // styles
 import './App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -12,6 +14,8 @@ function App() {
       <Navbar />
       {/* Skills */}
       <Skills />
+      {/* About me */}
+      {/* <About /> */}
       {/* Projects */}
       {/* Contact */}
     </div>
