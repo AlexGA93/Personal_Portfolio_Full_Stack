@@ -1,20 +1,23 @@
 @import "../../scss/index.scss";
 
 .navbar {
+  height: 60px;
+  width: 100%;
   &_sections {
     img {
-      width: 64px;
+      width: 40px;
     }
     &_list {
       a {
         li {
-          font-size: 40px;
+          font-size: 25px;
         }
       }
     }
   }
   &_social {
     &_list {
+      // padding-right: 30px;
       li {
         img {
           width: 30px;
