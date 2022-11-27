@@ -1,12 +1,16 @@
 // basic colors
 $default_light:#fff;
-$default_dark:#000000;
-// selecttion
+$default_dark:#1a1a1a;
+// background
+$dark_background_color: rgb(24, 24, 24);
+// selection
 $sections_select_color: #C23E4B;
 $social_select_color: #5B2957;
 // banners
 $banner_color:#313131;
 $inner_banner_color: #053BAB;
+
 $banner_border_light_color: rgb(194, 187, 187);
+$banner_background: rgba(20, 18, 18, 0.4);
 // buttons
 $success_color: #75D466;

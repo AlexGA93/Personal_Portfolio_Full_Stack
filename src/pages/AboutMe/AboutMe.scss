@@ -1,9 +1,18 @@
 @import '../../scss/index.scss';
 
 .aboutMe {
-    height: 100%;
     background-image: url('../../assets/imgs/backgrounds/about.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    height: 100vh;
+    &_container{
+        height: 100%;
+        &_box{
+            width: 700px;
+            height: auto;
+        }
+
+        &_skills{
+            height: 80px;
+        }
+    }
+    
 }

@@ -1,7 +1,7 @@
 // components
 import { Navbar } from './components/index';
 //pages
-import { Skills, About } from './pages/index';
+import { Salute, About } from './pages/index';
 // styles
 import './App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -13,9 +13,9 @@ function App() {
       {/* Navbar */}
       <Navbar />
       {/* Skills */}
-      <Skills />
+      <Salute />
       {/* About me */}
-      {/* <About /> */}
+      <About />
       {/* Projects */}
       {/* Contact */}
     </div>
