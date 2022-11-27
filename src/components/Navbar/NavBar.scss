@@ -1,6 +1,7 @@
 @import "../../scss/index.scss";
 
 .navbar {
+  background-color: $dark_background_color;
   height: 60px;
   width: 100%;
   &_sections {

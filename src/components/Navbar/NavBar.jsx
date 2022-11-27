@@ -5,9 +5,6 @@ import Logo  from '../../assets/icons/icon_Alex/icon_small.png';
 import Linkedin from '../../assets/icons/social/linkedin.png';
 import Mail from '../../assets/icons/social/email.png';
 import Github from '../../assets/icons/social/github.png';
-// import Linkedin from '../../assets/icons/social/linkedin_logo.png';
-// import Twitter from '../../assets/icons/social/twitter_logo.png';
-// import Github from '../../assets/icons/social/github_logo.png';
 
 //styles
 import './NavBar.scss';

@@ -11,3 +11,39 @@ a {
 a:hover {
     color: $sections_select_color;
 }
+
+// animation sequence
+.animation {
+    animation: updown 3s linear infinite;
+}
+
+@keyframes updown {
+    0% {
+        transform: translateY(-20px);
+    }
+    50% {
+        transform: translateY(20px);
+    }
+    100% {
+        transform: translateY(-20px);
+    }
+}
+
+// background image format
+.background_image_format {
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 95.4vh;
+    border-bottom: 10px solid $default_light;
+}
+
+// banner structure
+.banner_model {
+    
+    padding: 27px;
+    // margin: 10px;
+    border: 7px solid $banner_border_light_color;
+    background-color: $banner_background;
+}
