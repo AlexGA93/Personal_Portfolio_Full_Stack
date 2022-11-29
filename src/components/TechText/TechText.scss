@@ -1,0 +1,9 @@
+@import '../../scss/index.scss';
+
+.text{
+    background-color: $dark_background_color;
+    opacity: 0.8;
+    &_container{
+        padding: 30px;
+    }
+}
