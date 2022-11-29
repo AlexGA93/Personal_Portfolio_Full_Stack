@@ -1,13 +1,21 @@
 import React, {useEffect} from "react";
+
+// react router dom
+import { Link } from 'react-router-dom';
+
 // context provider
 import { useStateContext } from '../../context/ContextProvider';
+
 // images
 import Logo from '../../assets/icons/icon_Alex/icon_big_white.png';
 import backgroundImage from '../../assets/imgs/backgrounds/hello.jpg';
+
 // icons
 import downArrow from '../../assets/icons/others/arrow_down.png';
+
 // framer-motion
 import { motion } from 'framer-motion';
+
 // styles
 import "./Salute.scss";
 import "animate.css";
@@ -42,10 +50,10 @@ const Salute = () => {
           <h1>Hello I'm Alex!</h1>
         </div>
         {/* arrow */}
-        <div className={`skills_container_arrow ${isLoaded ? "animation" : ""} animate__animated animate__fadeInUp d-flex justify-content-center`}>
-          <a href="aboutMe">
+        <div className={`skills_container_arrow ${isLoaded ? "animation" : ""} animate__animated animate__fadeInUp d-flex justify-content-center mb-3`}>
+          <Link to="/aboutMe">
               <img src={downArrow} alt="arrow_down" />
-          </a>
+          </Link>
         </div>
       </div>      
     </motion.div>
