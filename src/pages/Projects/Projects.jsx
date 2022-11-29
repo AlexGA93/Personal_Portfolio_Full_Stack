@@ -36,7 +36,8 @@ const Projects = () => {
                 name: element.name,
                 description: element.description,
                 avatar: element.owner["avatar_url"],
-                login: element.owner["login"]
+                login: element.owner["login"],
+                url: element.svn_url
             });
         }))
         .catch( err => console.error(err) )
@@ -45,7 +46,6 @@ const Projects = () => {
     useEffect(() => {
         // load http request data once!
         makeRequest();
-        console.log(githubRepos);
     }, [])
 
     return (

@@ -114,10 +114,3 @@ const AboutMe = () => {
 }
 
 export default AboutMe;
-
-/**
- * TODO:
- * Up Arrow
- * Up/Down Effect
- * CSS Animation by scroll
- */

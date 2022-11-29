@@ -19,10 +19,6 @@ const TechText = () => {
               using <strong>MongoDB</strong> as a database (currently I am working with non-relational DDBBs such as <strong>MySQL</strong> ). I have no problem both 
               adapting and learning new disciplines.
           </p>
-          <p>
-              In regards to the version control I incorporate the git technology to my projects by <strong>Github</strong>(attached in my CV) with 
-              the rest APIs services and the test of them with tools like <strong>Postman</strong> and <strong>Insomnia</strong>.
-          </p>
         </div>
     </div>
   )

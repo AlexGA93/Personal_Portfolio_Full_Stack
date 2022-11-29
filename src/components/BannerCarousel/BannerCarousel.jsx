@@ -11,7 +11,6 @@ import './BannerCarousel.scss';
 
 const BannerCarousel = () => { 
 
-  // const { id, login, name, avatar, description } = props.element;
   // import states
   const { 
     isLoaded, 
@@ -27,14 +26,15 @@ const BannerCarousel = () => {
         {
           githubRepos.map((element, index, array) => (
               <Carousel.Item key={index}>
-                  <img 
-                      className='d-block w-100'
-                      src={element.avatar}
-                      alt={element.name}
-                  />
+                      <img 
+                        className='d-block w-100'
+                        src={element.avatar}
+                        alt={element.name}
+                      />
                   <Carousel.Caption>
                       <h3>{element.name}</h3>
                       <p>{element.description}</p>
+                      <a href={element.url} className="btn btn-primary">Go to repo</a>
                   </Carousel.Caption>
                   </Carousel.Item>
           ))
