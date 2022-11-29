@@ -4,6 +4,8 @@
     background-color: $dark_background_color;
     opacity: 0.8;
     &_container{
+        width: 500px;
+        height: 450px;
         padding: 30px;
     }
 }

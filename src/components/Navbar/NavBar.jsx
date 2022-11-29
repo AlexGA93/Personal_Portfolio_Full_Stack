@@ -42,8 +42,3 @@ const NavBar = () => {
 }
 
 export default NavBar;
-
-/**
- * TODO:
- * Toggle Navbar - responsive
- */

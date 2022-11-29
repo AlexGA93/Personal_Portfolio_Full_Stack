@@ -15,26 +15,9 @@ const Salute = () => {
         isLoaded, 
         setIsLoaded
      } = useStateContext();
-    
-
-
-
-    // const handleCoordenates = (coordinates) => {
-    //   // when coordenates is 0 set state to true
-    //   console.log(coordinates);
-    //   if(coordinates === 0) {
-    //     setIsLoaded(true);
-    //   }else{
-    //     setIsLoaded(false);
-    //   }
-    // };
 
     useEffect(() => {
       setIsLoaded(true);
-      // const coordinates = window.scrollY;
-      // // change isLoaded when scrolls i at center
-      // window.addEventListener('scroll', handleCoordenates(coordinates));
-      // return ()=>window.removeEventListener('scroll', handleCoordenates(coordinates))
     });
 
   return (
