@@ -68,7 +68,6 @@ const AboutMe = () => {
   // apply effects when some data are modified
   useEffect(() => {
       setIsLoaded(true);
-      console.log(isLoaded);
       // set time interval between function and delta value
       let ticker = setInterval(()=>{tick();}, delta);
 
