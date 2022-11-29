@@ -9,6 +9,9 @@ import { useStateContext } from '../../context/ContextProvider';
 // img and icons
 import downArrow from '../../assets/icons/others/arrow_down.png';
 
+// framer-motion
+import { motion } from 'framer-motion';
+
 // styles
 import './Technologies.scss';
 
@@ -24,7 +27,14 @@ const Technologies = () => {
     } = useStateContext();
 
   return (
-    <section className='techs background_image_format d-flex flex-column justify-content-between align-items-center' id='techs'>
+    <motion.div 
+        className='techs background_image_format d-flex flex-column justify-content-around align-items-center' 
+        id='techs'
+        
+        initial={{opacity: 0}}
+        animate={{opacity: 1}}
+        exit={{opacity: 0}}
+    >
         {/* title */}
         <div className="techs_title banner_model d-flex flex-column justify-content-between align-items-center m-5">
             <h1>Technologies</h1>
@@ -44,11 +54,11 @@ const Technologies = () => {
         </div>
         {/* arrow */}
         <div className={`techs_arrow ${isLoaded ? "animation" : ""} animate__animated animate__fadeInUp d-flex justify-content-center`}>
-            <a href="#">
+            <a href="projects">
                 <img src={downArrow} alt="arrow_down" />
             </a>
         </div>
-    </section>
+    </motion.div>
   )
 }
 

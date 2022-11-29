@@ -6,6 +6,9 @@ import { useStateContext } from '../../context/ContextProvider';
 // icons
 import downArrow from '../../assets/icons/others/arrow_down.png';
 
+// framer-motion
+import { motion } from 'framer-motion';
+
 // styles
 import './AboutMe.scss';
 
@@ -76,7 +79,15 @@ const AboutMe = () => {
   }, [text])
 
   return (
-    <section className='aboutMe background_image_format d-flex flex-column justify-content-between align-self-center' id='aboutMe'>
+    <motion.div 
+      className='aboutMe background_image_format d-flex flex-column justify-content-around align-self-center' 
+      id='aboutMe'
+
+      
+      initial={{opacity: 0}}
+      animate={{opacity: 1}}
+      exit={{opacity: 0}}
+    >
       <div className='aboutMe_container d-flex flex-column justify-content-center align-self-center'>
         {/* container */}
         <div className="aboutMe_container_box banner_model d-flex flex-column text-center justify-content-center animate__animated animate__fadeInTopLeft">
@@ -104,12 +115,13 @@ const AboutMe = () => {
       </div>
       {/* arrow */}
       <div className={`about_container_arrow ${isLoaded ? "animation" : ""} animate__animated animate__fadeInUp d-flex justify-content-center`}>
-        <a href="#">
+        <a href="techs">
             <img src={downArrow} alt="arrow_down" />
         </a>
       </div>
       
-    </section>
+    </motion.div>
+
   )
 }
 
