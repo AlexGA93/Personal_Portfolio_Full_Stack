@@ -1,7 +1,13 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+
+// react router dom
+import { Link } from 'react-router-dom';
 
 // components
 import { Card } from '../../components/index';
+
+// icons
+import upArrow from '../../assets/icons/others/arrow_up.png';
 
 // context provider
 import { useStateContext } from '../../context/ContextProvider';
@@ -14,17 +20,27 @@ import './ContactMe.scss';
 
 const ContactMe = () => {
 
-  const { contact, setContact } = useStateContext();
+  const { isLoaded, setIsLoaded, contact } = useStateContext();
+
+  useEffect(()=>{
+    setIsLoaded(true);
+  },[])
 
   return (
     <motion.div 
-      className='contact background_image_format' 
+      className='contact background_image_format d-flex flex-column justify-content-evenly' 
       id='contact'
     
       initial={{opacity: 0}}
       animate={{opacity: 1}}
       exit={{opacity: 0}}
     >
+      {/* arrow */}
+      <div className={`contact_arrow ${isLoaded ? "animation" : ""} animate__animated animate__fadeInUp d-flex justify-content-center`}>
+        <Link to="/projects">
+            <img src={upArrow} alt="arrow_up" />
+        </Link>
+      </div>
       {/* container */}
       <div className="contact_container d-flex flex-column justify-content-center align-items-center">
         {/* title inside a banner */}

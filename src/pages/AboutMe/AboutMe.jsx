@@ -1,10 +1,14 @@
 import React, { useEffect } from 'react';
 
+// react router dom
+import { Link } from 'react-router-dom';
+
 // context provider
 import { useStateContext } from '../../context/ContextProvider';
 
 // icons
 import downArrow from '../../assets/icons/others/arrow_down.png';
+import upArrow from '../../assets/icons/others/arrow_up.png';
 
 // framer-motion
 import { motion } from 'framer-motion';
@@ -88,6 +92,11 @@ const AboutMe = () => {
       animate={{opacity: 1}}
       exit={{opacity: 0}}
     >
+      <div className={`about_container_arrow ${isLoaded ? "animation" : ""} animate__animated animate__fadeInUp d-flex justify-content-center`}>
+        <Link to="/">
+            <img src={upArrow} alt="arrow_up" />
+        </Link>
+      </div>
       <div className='aboutMe_container d-flex flex-column justify-content-center align-self-center'>
         {/* container */}
         <div className="aboutMe_container_box banner_model d-flex flex-column text-center justify-content-center animate__animated animate__fadeInTopLeft">
@@ -115,9 +124,9 @@ const AboutMe = () => {
       </div>
       {/* arrow */}
       <div className={`about_container_arrow ${isLoaded ? "animation" : ""} animate__animated animate__fadeInUp d-flex justify-content-center`}>
-        <a href="techs">
+        <Link to="/techs">
             <img src={downArrow} alt="arrow_down" />
-        </a>
+        </Link>
       </div>
       
     </motion.div>
