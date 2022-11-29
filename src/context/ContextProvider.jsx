@@ -12,6 +12,7 @@ export const ContextProvider = ({ children }) => {
     const [text, setText]             = useState('');
     const [delta, setDelta]           = useState(300 - Math.random() * 100);
     const [index, setIndex]           = useState(1);
+    const [githubRepos, setGithubRepos] = useState([]);
     // methods
     // return provider
     return (
@@ -33,7 +34,10 @@ export const ContextProvider = ({ children }) => {
                 setDelta,
 
                 index, 
-                setIndex
+                setIndex,
+
+                githubRepos, 
+                setGithubRepos
             }}
         >
             {children}

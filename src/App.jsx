@@ -1,7 +1,7 @@
 // components
 import { Navbar } from './components/index';
 //pages
-import { Salute, About } from './pages/index';
+import { Salute, About, Projects } from './pages/index';
 // styles
 import './App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -16,8 +16,12 @@ function App() {
       <Salute />
       {/* About me */}
       <About />
+      {/* Technologies */}
       {/* Projects */}
+      <Projects />
+      {/* Technologies */}
       {/* Contact */}
+
     </div>
   )
 }
