@@ -6,6 +6,9 @@ import { Card } from '../../components/index';
 // context provider
 import { useStateContext } from '../../context/ContextProvider';
 
+// framer-motion
+import { motion } from 'framer-motion';
+
 // styles
 import './ContactMe.scss';
 
@@ -14,7 +17,14 @@ const ContactMe = () => {
   const { contact, setContact } = useStateContext();
 
   return (
-    <section className='contact background_image_format' id='contact'>
+    <motion.div 
+      className='contact background_image_format' 
+      id='contact'
+    
+      initial={{opacity: 0}}
+      animate={{opacity: 1}}
+      exit={{opacity: 0}}
+    >
       {/* container */}
       <div className="contact_container d-flex flex-column justify-content-center align-items-center">
         {/* title inside a banner */}
@@ -36,7 +46,7 @@ const ContactMe = () => {
           </div>
         </div>
       </div> 
-    </section>
+    </motion.div>
   )
 }
 

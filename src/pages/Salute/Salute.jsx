@@ -3,8 +3,11 @@ import React, {useEffect} from "react";
 import { useStateContext } from '../../context/ContextProvider';
 // images
 import Logo from '../../assets/icons/icon_Alex/icon_big_white.png';
+import backgroundImage from '../../assets/imgs/backgrounds/hello.jpg';
 // icons
 import downArrow from '../../assets/icons/others/arrow_down.png';
+// framer-motion
+import { motion } from 'framer-motion';
 // styles
 import "./Salute.scss";
 import "animate.css";
@@ -21,7 +24,13 @@ const Salute = () => {
     });
 
   return (
-    <div className="skills background_image_format" id="skills">
+    <motion.div 
+      className="skills background_image_format" id="skills"
+
+      initial={{opacity: 0}}
+      animate={{opacity: 1}}
+      exit={{opacity: 0}}
+    >
       {/* Logo animation and title */}
       <div className="skills_container d-flex flex-column justify-content-between align-items-center">
         {/* Logo animacion */}
@@ -34,12 +43,12 @@ const Salute = () => {
         </div>
         {/* arrow */}
         <div className={`skills_container_arrow ${isLoaded ? "animation" : ""} animate__animated animate__fadeInUp d-flex justify-content-center`}>
-          <a href="skills">
+          <a href="aboutMe">
               <img src={downArrow} alt="arrow_down" />
           </a>
         </div>
       </div>      
-    </div>
+    </motion.div>
   );
 };
 
