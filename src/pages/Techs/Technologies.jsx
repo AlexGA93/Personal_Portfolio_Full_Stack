@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+// styles
+import './Technologies.scss';
 
 // react router dom
 import { Link } from 'react-router-dom';
@@ -16,8 +18,7 @@ import upArrow from '../../assets/icons/others/arrow_up.png';
 // framer-motion
 import { motion } from 'framer-motion';
 
-// styles
-import './Technologies.scss';
+
 
 const Technologies = () => {
 
@@ -31,8 +32,12 @@ const Technologies = () => {
     } = useStateContext();
 
     useEffect(()=>{
-        setIsLoaded(true);
-    }, [])
+        const interval = setInterval(() => {
+            setIsLoaded(true);
+        }, 1000);
+        return () => clearInterval(interval);
+    }, []);
+
   return (
     <motion.div 
         className='techs background_image_format d-flex flex-column justify-content-around align-items-center' 
@@ -49,11 +54,11 @@ const Technologies = () => {
             </Link>
         </div>
         {/* title */}
-        <div className="techs_title banner_model d-flex flex-column justify-content-between align-items-center m-5">
+        <div className="techs_title banner_model animate__animated animate__fadeInRightBig d-flex flex-column justify-content-between align-items-center m-5">
             <h1>Technologies</h1>
         </div>
         {/* tech container */}
-        <div className="techs_techs banner_model d-flex flex-row flex-wrap m-3 align-self-center">
+        <div className="techs_techs banner_model animate__animated animate__fadeInLeftBig d-flex flex-row flex-wrap m-3 align-self-center">
             {/* text */}
             <div className='techs_techs_text m-2'>
                 <TechText />
