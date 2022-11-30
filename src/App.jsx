@@ -32,7 +32,7 @@ export default App;
  *  1- Presentation effect - done
  *  2- Arrows - done
  *  3- Animations - done
- *  4- Navbar
- *  5- responsive
+ *  4- Navbar - done
+ *  5- responsive - done
  *  6- Change presentation effect to carousel/transition
  */

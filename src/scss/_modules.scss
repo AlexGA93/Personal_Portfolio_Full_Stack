@@ -4,11 +4,7 @@ ul {
     list-style: none;
 }
 
-a {
-    text-decoration: none;
-    color: $default_light;
-}
-a:hover {
+.link:hover {
     color: $sections_select_color;
 }
 

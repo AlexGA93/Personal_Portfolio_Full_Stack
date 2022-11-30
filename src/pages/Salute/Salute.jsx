@@ -1,63 +1,68 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 
 // react router dom
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 // context provider
-import { useStateContext } from '../../context/ContextProvider';
+import { useStateContext } from "../../context/ContextProvider";
 
 // images
-import Logo from '../../assets/icons/icon_Alex/icon_big_white.png';
-import backgroundImage from '../../assets/imgs/backgrounds/hello.jpg';
+import Logo from "../../assets/icons/icon_Alex/icon_big_white.png";
+import backgroundImage from "../../assets/imgs/backgrounds/hello.jpg";
 
 // icons
-import downArrow from '../../assets/icons/others/arrow_down.png';
+import downArrow from "../../assets/icons/others/arrow_down.png";
 
 // framer-motion
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 // styles
 import "./Salute.scss";
 
 const Salute = () => {
-    // import states
-    const { 
-        isLoaded, 
-        setIsLoaded
-     } = useStateContext();
+  // import states
+  const { isLoaded, setIsLoaded } = useStateContext();
 
-    useEffect(() => {
-      const interval = setInterval(() => {
-        setIsLoaded(true);
-      }, 1000);
-      return () => clearInterval(interval);
-    });
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsLoaded(true);
+    }, 1000);
+    return () => clearInterval(interval);
+  });
 
   return (
-    <motion.div 
-      className="skills background_image_format" id="skills"
-
-      initial={{opacity: 0}}
-      animate={{opacity: 1}}
-      exit={{opacity: 0}}
+    <motion.div
+      className="skills background_image_format"
+      id="skills"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
     >
       {/* Logo animation and title */}
       <div className="skills_container d-flex flex-column justify-content-between align-items-center">
         {/* Logo animacion */}
-        <div className={`skills_container_image animate__animated animate__fadeInTopLeft ${isLoaded ? "animation" : ""} p-4`}>
-            <img src={Logo} alt="Alex_logo" />
+        <div
+          className={`skills_container_image animate__animated animate__fadeInTopLeft ${
+            isLoaded ? "animation" : ""
+          } p-4`}
+        >
+          <img src={Logo} alt="Alex_logo" />
         </div>
         {/* title inside a banner */}
         <div className="skills_container_title banner_model">
           <h1>Hello I'm Alex!</h1>
         </div>
         {/* arrow */}
-        <div className={`skills_container_arrow ${isLoaded ? "animation" : ""} d-flex justify-content-center mb-3`}>
+        <div
+          className={`skills_container_arrow ${
+            isLoaded ? "animation" : ""
+          } d-flex justify-content-center mb-3`}
+        >
           <Link to="/aboutMe">
-              <img src={downArrow} alt="arrow_down" />
+            <img src={downArrow} alt="arrow_down" />
           </Link>
         </div>
-      </div>      
+      </div>
     </motion.div>
   );
 };

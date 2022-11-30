@@ -4,12 +4,12 @@
     background-image: url('../../assets/imgs/backgrounds/electronic2.jpg');
     // height: 10vh;
     &_title{
-        width: 500px;
+        width: 300px;
         margin: 20px;
     }
     &_repos{
         margin: 20px;
         width: 80%;
-        height: 500px;
+        height: auto;
     }
 }

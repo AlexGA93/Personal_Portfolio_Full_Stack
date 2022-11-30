@@ -1,29 +1,54 @@
 @import "../../scss/index.scss";
 
-.navbar {
-  background-color: $dark_background_color;
-  height: 60px;
-  width: 100%;
-  &_sections {
+.navbar{
+  &-brand {
     img {
       width: 40px;
     }
-    &_list {
-      a {
-        li {
-          font-size: 25px;
+  }
+  &-collapse {
+    &-nav {
+      &-dropdown {
+        &-item {
+          .social-image {
+            img {
+              margin-left: 5px;
+              width: 20px;
+            }
+          }
         }
       }
     }
   }
-  &_social {
-    &_list {
-      // padding-right: 30px;
-      li {
-        img {
-          width: 30px;
-        }
-      }
-    }
-  }
+  // img {
+  //   width: 40px;
+  // }
 }
+
+// .navbar {
+//   background-color: $dark_background_color;
+//   height: 60px;
+//   width: 100%;
+//   &_sections {
+//     img {
+//       width: 40px;
+//     }
+//     &_list {
+//       a {
+//         li {
+//           font-size: 25px;
+//         }
+//       }
+//     }
+//   }
+//   &_social {
+//     &_list {
+//       // padding-right: 30px;
+//       li {
+//         img {
+//           width: 30px;
+//         }
+//       }
+//     }
+//   }
+// }
