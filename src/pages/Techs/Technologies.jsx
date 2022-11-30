@@ -23,10 +23,7 @@ const Technologies = () => {
   // import states
   const {
     isLoaded,
-    setIsLoaded,
-
-    githubRepos,
-    setGithubRepos,
+    setIsLoaded
   } = useStateContext();
 
   useEffect(() => {

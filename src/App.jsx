@@ -4,10 +4,7 @@ import React, { useEffect } from 'react';
 import { useStateContext } from "./context/ContextProvider";
 
 // components
-import { Navbar } from './components/index';
-
-// components
-import { AnimatedRoutes } from './components/index';
+import { Navbar, AnimatedRoutes } from './components/index';
 
 // routes
 import { BrowserRouter } from 'react-router-dom';
@@ -38,14 +35,3 @@ const App = () => {
 }
 
 export default App;
-
-/**
- * TODO: 
- *  1- Presentation effect - done
- *  2- Arrows - done
- *  3- Animations - done
- *  4- Navbar - done
- *  5- responsive - done
- *  6- Change presentation effect to carousel/transition
- *  7- Loading page
- */

@@ -11,7 +11,6 @@ import { useStateContext } from "../../context/ContextProvider";
 
 // images
 import Logo from "../../assets/icons/icon_Alex/icon_big_white.png";
-import backgroundImage from "../../assets/imgs/backgrounds/hello.jpg";
 
 // icons
 import downArrow from "../../assets/icons/others/arrow_down.png";
@@ -42,7 +41,7 @@ const Salute = () => {
     >
       {/* Logo animation and title */}
       <div className="skills_container d-flex flex-column justify-content-between align-items-center">
-        {/* Logo animacion */}
+        {/* Logo */}
         <div
           className={`skills_container_image animate__animated animate__fadeInTopLeft ${
             isLoaded ? "animation" : ""

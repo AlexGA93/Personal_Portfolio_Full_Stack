@@ -1,6 +1,4 @@
-import React, { useEffect } from "react";
-
-// bootstrap card
+import React from "react";
 
 // styles
 import "./Card.scss";
