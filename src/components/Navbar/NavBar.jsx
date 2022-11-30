@@ -1,64 +1,116 @@
-import React from 'react';
+import React from "react";
 
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+import { useStateContext } from "../../context/ContextProvider";
 
 // logo
-import Logo  from '../../assets/icons/icon_Alex/icon_small.png';
+import Logo from "../../assets/icons/icon_Alex/icon_small.png";
+import Logo_dark from "../../assets/icons/icon_Alex/icon_small_dark.png";
+
 // social_logo
-import Linkedin from '../../assets/icons/social/linkedin.png';
-import Mail from '../../assets/icons/social/email.png';
-import Github from '../../assets/icons/social/github.png';
+import Linkedin from "../../assets/icons/social/linkedin.png";
+import Mail from "../../assets/icons/social/email.png";
+import Github from "../../assets/icons/social/github.png";
+
+// react bootstrap
+import Button from "react-bootstrap/Button";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
 
 //styles
-import './NavBar.scss';
-import 'animate.css';
+import "./NavBar.scss";
+import "animate.css";
 
 const NavBar = () => {
+  const { colorMode, setColorMode } = useStateContext();
+
+  const toggleMode = () => {
+    setColorMode(!colorMode);
+  };
+
   return (
-    <nav  className="navbar animate__animated animate__backInDown d-flex flex-row flex-wrap justify-content-between">
-        <div className="navbar_sections d-flex flex-wrap ms-3">
-            <div className="navbar_sections_logo">
-                <Link to='/'>
-                    <img src={Logo} alt="Logo" />
-                </Link>
-            </div>
-            <ul className='navbar_sections_list d-flex flex-wrap p-0'>
-                <Link to="/aboutMe">
-                    <li className='mx-3'>About Me</li>
-                </Link>
-                <Link to="/techs">
-                    <li className='mx-3'>Technologies</li>
-                </Link>
-                <Link to="/projects">
-                    <li className='mx-3'>Projects</li>
-                </Link>
-                <Link to="/contact">
-                    <li className='mx-3'>Contact</li>
-                </Link>
-            </ul>
-        </div>
-        {/* social */}
-        <div className="navbar_social">
-            <ul className='navbar_social_list d-flex flex-wrap me-3'>
-                    <li className='mx-2 my-2'>
-                        <a href="https://www.linkedin.com/in/alejandro-gimeno-ataz-3741a013b/">
-                            <img src={Linkedin} alt="logo_linkedin" />
-                        </a>
-                    </li>
-                    <li className='mx-2 my-2'>
-                        <a href="https://outlook.live.com/owa/">
-                            <img src={Mail} alt="logo_twitter" />
-                        </a>
-                    </li>
-                    <li className='mx-2 my-2'>
-                        <a href="https://github.com/AlexGA93">
-                            <img src={Github} alt="logo_github" />
-                        </a>
-                    </li>
-                </ul>
-            </div>
-    </nav>
-  )
-}
+    <Navbar
+      bg={colorMode ? "light" : "dark"}
+      variant={colorMode ? "light" : "dark"}
+      expand="lg"
+      className="navbar"
+    >
+      <Container>
+        <Navbar.Brand href="/">
+          <img src={colorMode ? Logo_dark : Logo} alt="Logo" />
+          Web Dev Portfolio!
+        </Navbar.Brand>
+
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+
+        <Navbar.Collapse id="basic-navbar-nav" className="navbar-collapse">
+          <Nav className="navbar-collapse-nav me-auto">
+            <Nav.Link className="link" href="/aboutMe">
+              About Me
+            </Nav.Link>
+            <Nav.Link className="link" href="/techs">
+              Technologies
+            </Nav.Link>
+            <Nav.Link className="link" href="/projects">
+              Projects
+            </Nav.Link>
+            <Nav.Link className="link" href="/contact">
+              Contact
+            </Nav.Link>
+
+            <NavDropdown
+              title="Social Media"
+              id="basic-nav-dropdown link"
+              className="navbar-collapse-nav-dropdown link"
+            >
+              <NavDropdown.Item
+                className="navbar-collapse-nav-dropdown-item link"
+                href="https://www.linkedin.com/in/alejandro-gimeno-ataz-3741a013b/"
+              >
+                <div className="dropdown_linkedin social-image">
+                  Linkedin
+                  <img src={Linkedin} alt="logo_linkedin" />
+                </div>
+              </NavDropdown.Item>
+
+              <NavDropdown.Divider />
+
+              <NavDropdown.Item
+                className="navbar-collapse-nav-dropdown-item link"
+                href="https://outlook.live.com/owa/"
+              >
+                <div className="dropdown_email social-image">
+                  Email
+                  <img src={Mail} alt="logo_twitter" />
+                </div>
+              </NavDropdown.Item>
+
+              <NavDropdown.Divider />
+
+              <NavDropdown.Item
+                className="navbar-collapse-nav-dropdown-item link"
+                href="https://github.com/AlexGA93"
+              >
+                <div className="dropdown_github social-image">
+                  Github
+                  <img src={Github} alt="logo_github" />
+                </div>
+              </NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+
+          <Button
+            onClick={toggleMode}
+            variant={colorMode ? "outline-dark" : "outline-light"}
+          >
+            Dark Mode: {colorMode ? "Off" : "On"}
+          </Button>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  );
+};
 
 export default NavBar;

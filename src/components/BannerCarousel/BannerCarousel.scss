@@ -1,6 +1,13 @@
 @import '../../scss/index.scss';
 
 .carousel {
-    width:400px;
+    width:30%;
     margin: auto;
+}
+
+@media only screen and (max-width: 600px) {
+    .carousel {
+        width:100%;
+        margin: auto;
+    }
 }
