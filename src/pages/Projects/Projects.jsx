@@ -48,9 +48,11 @@ const Projects = () => {
     };
 
     useEffect(() => {
-        // load http request data once!
-        makeRequest();
-        setIsLoaded(true);
+        const interval = setInterval(() => {
+            setIsLoaded(true);
+            makeRequest();
+        }, 1000);
+        return () => clearInterval(interval);
     }, [])
 
     return (
@@ -69,11 +71,11 @@ const Projects = () => {
                 </Link>
             </div>
             {/* title */}
-            <div className='projects_title banner_model d-flex flex-column justify-content-between align-items-center'>
+            <div className='projects_title banner_model animate__animated animate__fadeInLeftBig d-flex flex-column justify-content-between align-items-center'>
                 <h1>Projects</h1>
             </div>
 
-            <div className='projects_repos banner_model'>
+            <div className='projects_repos banner_model animate__animated animate__fadeInRightBig'>
                 <BannerCarousel />
             </div>
 

@@ -1,5 +1,8 @@
 import React, {useEffect} from 'react';
 
+// styles
+import './ContactMe.scss';
+
 // react router dom
 import { Link } from 'react-router-dom';
 
@@ -15,8 +18,6 @@ import { useStateContext } from '../../context/ContextProvider';
 // framer-motion
 import { motion } from 'framer-motion';
 
-// styles
-import './ContactMe.scss';
 
 const ContactMe = () => {
 
@@ -44,7 +45,7 @@ const ContactMe = () => {
       {/* container */}
       <div className="contact_container d-flex flex-column justify-content-center align-items-center">
         {/* title inside a banner */}
-        <div className="contact_container_box banner_model">
+        <div className="contact_container_box banner_model animate__animated animate__fadeInUpBig">
           {/* title */}
           <div className='contact_container_box_title text-center'>
             <h1>Contact Me!</h1>

@@ -1,5 +1,8 @@
 import React, { useEffect } from 'react';
 
+// styles
+import './AboutMe.scss';
+
 // react router dom
 import { Link } from 'react-router-dom';
 
@@ -13,8 +16,7 @@ import upArrow from '../../assets/icons/others/arrow_up.png';
 // framer-motion
 import { motion } from 'framer-motion';
 
-// styles
-import './AboutMe.scss';
+
 
 const AboutMe = () => {
 

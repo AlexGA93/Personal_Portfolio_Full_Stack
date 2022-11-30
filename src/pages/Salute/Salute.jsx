@@ -18,7 +18,6 @@ import { motion } from 'framer-motion';
 
 // styles
 import "./Salute.scss";
-import "animate.css";
 
 const Salute = () => {
     // import states
@@ -28,7 +27,10 @@ const Salute = () => {
      } = useStateContext();
 
     useEffect(() => {
-      setIsLoaded(true);
+      const interval = setInterval(() => {
+        setIsLoaded(true);
+      }, 1000);
+      return () => clearInterval(interval);
     });
 
   return (
@@ -42,7 +44,7 @@ const Salute = () => {
       {/* Logo animation and title */}
       <div className="skills_container d-flex flex-column justify-content-between align-items-center">
         {/* Logo animacion */}
-        <div className={`skills_container_image ${isLoaded ? "animation" : ""} animate__animated animate__animate__animated animate__fadeInTopLeft p-4`}>
+        <div className={`skills_container_image animate__animated animate__fadeInTopLeft ${isLoaded ? "animation" : ""} p-4`}>
             <img src={Logo} alt="Alex_logo" />
         </div>
         {/* title inside a banner */}
@@ -50,7 +52,7 @@ const Salute = () => {
           <h1>Hello I'm Alex!</h1>
         </div>
         {/* arrow */}
-        <div className={`skills_container_arrow ${isLoaded ? "animation" : ""} animate__animated animate__fadeInUp d-flex justify-content-center mb-3`}>
+        <div className={`skills_container_arrow ${isLoaded ? "animation" : ""} d-flex justify-content-center mb-3`}>
           <Link to="/aboutMe">
               <img src={downArrow} alt="arrow_down" />
           </Link>
