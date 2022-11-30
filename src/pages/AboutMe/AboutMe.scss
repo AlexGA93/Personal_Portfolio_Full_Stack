@@ -1,18 +1,11 @@
 @import '../../scss/index.scss';
 
 .aboutMe {
-    background-image: url('../../assets/imgs/backgrounds/about.jpg');
-    height: 100vh;
+    background-image: url('../../assets/imgs/backgrounds/mac.jpg');
+    // height: 95.4vh;
     &_container{
-        height: 100%;
-        &_box{
-            width: 700px;
-            height: auto;
-        }
-
-        &_skills{
-            height: 80px;
-        }
+        // height: 100%;
+        width: 70%// 800px;
     }
     
 }

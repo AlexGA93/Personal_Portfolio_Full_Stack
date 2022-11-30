@@ -1,62 +1,71 @@
-import React, {useEffect} from "react";
-// context provider
-import { useStateContext } from '../../context/ContextProvider';
-// images
-import Logo from '../../assets/icons/icon_Alex/icon_big_white.png';
-// icons
-import downArrow from '../../assets/icons/others/arrow_down.png';
+import React, { useEffect } from "react";
+
 // styles
 import "./Salute.scss";
-import "animate.css";
+
+// react router dom
+import { Link } from "react-router-dom";
+
+// context provider
+import { useStateContext } from "../../context/ContextProvider";
+
+// images
+import Logo from "../../assets/icons/icon_Alex/icon_big_white.png";
+import backgroundImage from "../../assets/imgs/backgrounds/hello.jpg";
+
+// icons
+import downArrow from "../../assets/icons/others/arrow_down.png";
+
+// framer-motion
+import { motion } from "framer-motion";
+
 
 const Salute = () => {
-    // import states
-    const { 
-        isLoaded, 
-        setIsLoaded
-     } = useStateContext();
-    
+  // import states
+  const { isLoaded, setIsLoaded } = useStateContext();
 
-
-
-    // const handleCoordenates = (coordinates) => {
-    //   // when coordenates is 0 set state to true
-    //   console.log(coordinates);
-    //   if(coordinates === 0) {
-    //     setIsLoaded(true);
-    //   }else{
-    //     setIsLoaded(false);
-    //   }
-    // };
-
-    useEffect(() => {
+  useEffect(() => {
+    const interval = setInterval(() => {
       setIsLoaded(true);
-      // const coordinates = window.scrollY;
-      // // change isLoaded when scrolls i at center
-      // window.addEventListener('scroll', handleCoordenates(coordinates));
-      // return ()=>window.removeEventListener('scroll', handleCoordenates(coordinates))
-    });
+    }, 1000);
+    return () => clearInterval(interval);
+  });
 
   return (
-    <div className="skills background_image_format" id="skills">
+    <motion.div
+      className="skills background_image_format"
+      id="skills"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       {/* Logo animation and title */}
       <div className="skills_container d-flex flex-column justify-content-between align-items-center">
         {/* Logo animacion */}
-        <div className={`skills_container_image ${isLoaded ? "animation" : ""} animate__animated animate__animate__animated animate__fadeInTopLeft p-4`}>
-            <img src={Logo} alt="Alex_logo" />
+        <div
+          className={`skills_container_image animate__animated animate__fadeInTopLeft ${
+            isLoaded ? "animation" : ""
+          } p-4`}
+        >
+          <img src={Logo} alt="Alex_logo" />
         </div>
         {/* title inside a banner */}
         <div className="skills_container_title banner_model">
           <h1>Hello I'm Alex!</h1>
         </div>
         {/* arrow */}
-        <div className={`skills_container_arrow ${isLoaded ? "animation" : ""} animate__animated animate__fadeInUp d-flex justify-content-center`}>
-          <a href="skills">
-              <img src={downArrow} alt="arrow_down" />
-          </a>
+        <div
+          className={`skills_container_arrow ${
+            isLoaded ? "animation" : ""
+          } d-flex justify-content-center mb-3`}
+        >
+          <Link to="/aboutMe">
+            <img src={downArrow} alt="arrow_down" />
+          </Link>
         </div>
-      </div>      
-    </div>
+      </div>
+    </motion.div>
   );
 };
 

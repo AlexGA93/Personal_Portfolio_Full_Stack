@@ -5,10 +5,10 @@
     background-image: url('../../assets/imgs/backgrounds/hello.jpg');
 
     &_container{
-        height: 90vh;
+        height: 80vh;
         &_image {
             img {
-                width: 300px;
+                width: 200px;
                 margin: 30px 0 0 30px;
                 color: $default_light;
             }

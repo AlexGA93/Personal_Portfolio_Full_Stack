@@ -1,0 +1,15 @@
+@import '../../scss/index.scss';
+
+.contact{
+    background-image: url('../../assets/imgs/backgrounds/contact2.jpg');
+    height: 94.5vh;
+
+    &_container{
+        height: 90%;
+        
+        &_box{
+            width: 70%;
+            height: auto;
+        }
+    }
+}

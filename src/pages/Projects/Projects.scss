@@ -1,0 +1,15 @@
+@import '../../scss/index.scss';
+
+.projects {
+    background-image: url('../../assets/imgs/backgrounds/electronic2.jpg');
+    // height: 10vh;
+    &_title{
+        width: 300px;
+        margin: 20px;
+    }
+    &_repos{
+        margin: 20px;
+        width: 80%;
+        height: auto;
+    }
+}

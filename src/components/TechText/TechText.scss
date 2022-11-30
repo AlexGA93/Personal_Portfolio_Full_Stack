@@ -1,0 +1,12 @@
+@import '../../scss/index.scss';
+
+.text{
+    background-color: $dark_background_color;
+    opacity: 0.8;
+
+    &_container{
+        width: 100%;
+        height: auto;
+        padding: 30px;
+    }
+}

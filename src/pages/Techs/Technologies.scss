@@ -1,0 +1,16 @@
+@import '../../scss/index.scss';
+
+.techs {
+    background-image: url('../../assets/imgs/backgrounds/projects_v1.jpg');
+    // height: 95.4vh;
+    &_title{
+        width: 300px;
+        margin: 20px;
+    }
+    &_techs{
+        width: 70%;
+        // &_text{
+        //     width: 100px;// 500px;
+        // }
+    }
+}
