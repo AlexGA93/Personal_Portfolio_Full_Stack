@@ -1,5 +1,8 @@
 import React, { useEffect } from "react";
 
+// styles
+import "./Projects.scss";
+
 // react router dom
 import { Link } from "react-router-dom";
 
@@ -16,33 +19,11 @@ import upArrow from "../../assets/icons/others/arrow_up.png";
 // framer-motion
 import { motion } from "framer-motion";
 
-// styles
-import "./Projects.scss";
-
 const Projects = () => {
   // import states
   const { isLoaded, setIsLoaded, githubRepos } = useStateContext();
 
-  const makeRequest = () => {
-    fetch("https://api.github.com/users/AlexGA93/repos")
-      .then((res) => res.json())
-      .then((res) =>
-        res.map((element) => {
-          githubRepos.push({
-            id: element.id,
-            name: element.name,
-            description: element.description,
-            avatar: element.owner["avatar_url"],
-            login: element.owner["login"],
-            url: element.svn_url,
-          });
-        })
-      )
-      .catch((err) => console.error(err));
-  };
-
   useEffect(() => {
-    makeRequest();
     const interval = setInterval(() => {
       setIsLoaded(true);
     }, 500);
@@ -73,7 +54,7 @@ const Projects = () => {
       </div>
 
       <div className="projects_repos banner_model animate__animated animate__fadeInRightBig">
-        <BannerCarousel />
+        <BannerCarousel githubRepos={githubRepos} />
       </div>
 
       {/* arrow */}

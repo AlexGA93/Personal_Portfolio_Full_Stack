@@ -1,5 +1,8 @@
 import React, { useEffect } from "react";
 
+// styles
+import "./Salute.scss";
+
 // react router dom
 import { Link } from "react-router-dom";
 
@@ -16,8 +19,6 @@ import downArrow from "../../assets/icons/others/arrow_down.png";
 // framer-motion
 import { motion } from "framer-motion";
 
-// styles
-import "./Salute.scss";
 
 const Salute = () => {
   // import states
@@ -37,6 +38,7 @@ const Salute = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
     >
       {/* Logo animation and title */}
       <div className="skills_container d-flex flex-column justify-content-between align-items-center">

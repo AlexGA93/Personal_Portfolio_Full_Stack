@@ -39,10 +39,29 @@ export const ContextProvider = ({ children }) => {
   const [colorMode, setColorMode] = useState(false);
 
   // methods
+  const makeRequest = () => {
+    fetch("https://api.github.com/users/AlexGA93/repos")
+      .then((res) => res.json())
+      .then((res) =>
+        res.map((element) => {
+          githubRepos.push({
+            id: element.id,
+            name: element.name,
+            description: element.description,
+            avatar: element.owner["avatar_url"],
+            login: element.owner["login"],
+            url: element.svn_url,
+          });
+        })
+      )
+      .catch((err) => console.error(err));
+  };
   // return provider
   return (
     <StateContext.Provider
       value={{
+        makeRequest,
+        
         isLoaded,
         setIsLoaded,
 
