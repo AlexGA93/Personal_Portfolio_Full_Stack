@@ -1,17 +1,12 @@
 import React from "react";
 
-// context provider
-import { useStateContext } from "../../context/ContextProvider.jsx";
-
 // react bootstrap
 import Carousel from "react-bootstrap/Carousel";
 
 // styles
 import "./BannerCarousel.scss";
 
-const BannerCarousel = () => {
-  // import states
-  const { githubRepos } = useStateContext();
+const BannerCarousel = ({githubRepos}) => {
 
   return (
     <>

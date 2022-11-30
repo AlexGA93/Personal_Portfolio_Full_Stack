@@ -1,3 +1,8 @@
+import React, { useEffect } from 'react';
+
+// context provider
+import { useStateContext } from "./context/ContextProvider";
+
 // components
 import { Navbar } from './components/index';
 
@@ -7,21 +12,28 @@ import { AnimatedRoutes } from './components/index';
 // routes
 import { BrowserRouter } from 'react-router-dom';
 
+// framer-motion
+import { AnimatePresence } from 'framer-motion';
+
 // styles
 import './App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-function App() {
+const App = () => {
+
+  const { makeRequest } = useStateContext();
+
+  useEffect(()=>{
+    makeRequest();
+  }, []);
 
   return (
-    <div className="App">
+    <AnimatePresence>
       <BrowserRouter>
         <Navbar />
         <AnimatedRoutes />
       </BrowserRouter>
-    </div>
-    
-    
+    </AnimatePresence>
   )
 }
 
@@ -35,4 +47,5 @@ export default App;
  *  4- Navbar - done
  *  5- responsive - done
  *  6- Change presentation effect to carousel/transition
+ *  7- Loading page
  */
