@@ -5,15 +5,14 @@
   "homepage": "http://alexga93.github.io/portfolio-web-dev",
   "type": "module",
   "scripts": {
-    "predeploy":"npm run build",
-    "deploy":"gh-pages -d dist",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build --base=./",
     "preview": "vite preview"
   },
   "dependencies": {
     "animate.css": "^4.1.1",
-    "axios": "^1.2.0",
     "bootstrap": "^5.2.3",
     "framer-motion": "^7.6.15",
     "gh-pages": "^4.0.0",
