@@ -7,7 +7,7 @@ import { useStateContext } from "./context/ContextProvider";
 import { Navbar, AnimatedRoutes } from './components/index';
 
 // routes
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 
 // framer-motion
 import { AnimatePresence } from 'framer-motion';
@@ -26,10 +26,10 @@ const App = () => {
 
   return (
     <AnimatePresence>
-      <BrowserRouter>
+      <HashRouter>
         <Navbar />
         <AnimatedRoutes />
-      </BrowserRouter>
+      </HashRouter>
     </AnimatePresence>
   )
 }
