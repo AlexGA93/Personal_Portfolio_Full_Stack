@@ -1,7 +1,9 @@
 import React from "react";
 
+// react router dom
 import { Link } from 'react-router-dom';
 
+// state contexts
 import { useStateContext } from "../../context/ContextProvider";
 
 // logo
@@ -48,16 +50,16 @@ const NavBar = () => {
 
         <Navbar.Collapse id="basic-navbar-nav" className="navbar-collapse">
           <Nav className="navbar-collapse-nav me-auto">
-            <Nav.Link className="link" as={Link} to="/aboutMe">
+            <Nav.Link className="link" href="/Personal_Portfolio_Full_Stack/#/aboutMe">
               About Me
             </Nav.Link>
-            <Nav.Link className="link" as={Link} to="/techs">
+            <Nav.Link className="link" href="/Personal_Portfolio_Full_Stack/#/techs">
               Technologies
             </Nav.Link>
-            <Nav.Link className="link" as={Link} to="/projects">
+            <Nav.Link className="link" href="/Personal_Portfolio_Full_Stack/#/projects">
               Projects
             </Nav.Link>
-            <Nav.Link className="link" as={Link} to="/contact">
+            <Nav.Link className="link" href="/Personal_Portfolio_Full_Stack/#/contact">
               Contact
             </Nav.Link>
 
