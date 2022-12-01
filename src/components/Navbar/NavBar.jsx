@@ -1,6 +1,7 @@
 import React from "react";
 
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
 import { useStateContext } from "../../context/ContextProvider";
 
 // logo
@@ -38,7 +39,7 @@ const NavBar = () => {
       className="navbar"
     >
       <Container>
-        <Navbar.Brand href="/Personal_Portfolio_Full_Stack/#/">
+        <Navbar.Brand as={Link} to="/">
           <img src={colorMode ? Logo_dark : Logo} alt="Logo" />
           Web Dev Portfolio!
         </Navbar.Brand>
@@ -47,16 +48,16 @@ const NavBar = () => {
 
         <Navbar.Collapse id="basic-navbar-nav" className="navbar-collapse">
           <Nav className="navbar-collapse-nav me-auto">
-            <Nav.Link className="link" href="/Personal_Portfolio_Full_Stack/#/aboutMe">
+            <Nav.Link className="link" as={Link} to="/aboutMe">
               About Me
             </Nav.Link>
-            <Nav.Link className="link" href="/Personal_Portfolio_Full_Stack/#/techs">
+            <Nav.Link className="link" as={Link} to="/techs">
               Technologies
             </Nav.Link>
-            <Nav.Link className="link" href="/Personal_Portfolio_Full_Stack/#/projects">
+            <Nav.Link className="link" as={Link} to="/projects">
               Projects
             </Nav.Link>
-            <Nav.Link className="link" href="/Personal_Portfolio_Full_Stack/#/contact">
+            <Nav.Link className="link" as={Link} to="/contact">
               Contact
             </Nav.Link>
 
